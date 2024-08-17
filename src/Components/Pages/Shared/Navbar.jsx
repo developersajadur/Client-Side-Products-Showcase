@@ -1,9 +1,12 @@
-// src/components/Navbar.js
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navbar, Dropdown, Avatar } from 'flowbite-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProvider';
 
 const Header = () => {
+  const { logOutUser, user } = useContext(AuthContext); // Get authentication status and logOutUser function from AuthContext
+  const navigate = useNavigate(); // Initialize useNavigate for redirection
+
   const navLinks = [
     { path: '/', label: 'Home', active: true, status: '' }, // Home is enabled
     { path: '/about', label: 'About', active: false, status: 'disable' },
@@ -11,6 +14,11 @@ const Header = () => {
     { path: '/pricing', label: 'Pricing', active: false, status: 'disable' },
     { path: '/contact', label: 'Contact', active: false, status: 'disable' },
   ];
+
+  const handleSignOut = async () => {
+    await logOutUser();
+    navigate('/login');
+  };
 
   return (
     <Navbar fluid={true} rounded={true} className='bg-[D1E9F6]'>
@@ -25,21 +33,25 @@ const Header = () => {
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Dropdown
-          arrowIcon={false}
-          inline={true}
-          label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded={true} />}
-        >
-          <Dropdown.Header>
-            <span className="block text-sm">Bonnie Green</span>
-            <span className="block truncate text-sm font-medium">name@flowbite.com</span>
-          </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
-        </Dropdown>
+        {user ? (
+          <Dropdown
+            arrowIcon={false}
+            inline={true}
+            label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded={true} />}
+          >
+            <Dropdown.Header>
+              <span className="block text-sm">Bonnie Green</span>
+              <span className="block truncate text-sm font-medium">name@flowbite.com</span>
+            </Dropdown.Header>
+            <Dropdown.Item>Dashboard</Dropdown.Item>
+            <Dropdown.Item>Settings</Dropdown.Item>
+            <Dropdown.Item>Earnings</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item onClick={handleSignOut}>Sign out</Dropdown.Item> {/* Add onClick to handle sign-out */}
+          </Dropdown>
+        ) : (
+          <Link to="/login" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Login</Link>
+        )}
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>

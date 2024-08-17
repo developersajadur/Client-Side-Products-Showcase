@@ -12,6 +12,9 @@ const ProductCard = ({ product }) => {
                 <p className="text-gray-600 text-sm mb-2">
                     <strong>Category:</strong> {product?.category}
                 </p>
+                <p className="text-gray-600 text-sm mb-2">
+                    <strong>Brand:</strong> {product?.brand}
+                </p>
                 <p className="text-gray-600 text-sm">
                     <strong>Added on:</strong> {moment(product?.creationDate).format('MMMM Do, YYYY')}
                 </p>

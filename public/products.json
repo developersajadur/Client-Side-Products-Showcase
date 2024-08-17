@@ -1,93 +1,102 @@
 [
-    {
-      "name": "Wireless Bluetooth Headphones",
-      "image": "https://example.com/images/headphones.jpg",
-      "description": "High-quality wireless Bluetooth headphones with noise cancellation.",
-      "price": 59.99,
-      "category": "Electronics",
-      "ratings": 4.5,
-      "creationDate": "2024-07-01T10:30:00Z"
-    },
-    {
-      "name": "Smart LED TV 55\"",
-      "image": "https://example.com/images/tv.jpg",
-      "description": "55-inch 4K Ultra HD Smart LED TV with HDR and Alexa compatibility.",
-      "price": 499.99,
-      "category": "Electronics",
-      "ratings": 4.7,
-      "creationDate": "2024-07-03T14:15:00Z"
-    },
-    {
-      "name": "Gaming Laptop",
-      "image": "https://example.com/images/laptop.jpg",
-      "description": "High-performance gaming laptop with Intel i7 processor and NVIDIA RTX 3070.",
-      "price": 1299.99,
-      "category": "Computers",
-      "ratings": 4.8,
-      "creationDate": "2024-07-05T09:00:00Z"
-    },
-    {
-      "name": "Wireless Mouse",
-      "image": "https://example.com/images/mouse.jpg",
-      "description": "Ergonomic wireless mouse with adjustable DPI and long battery life.",
-      "price": 24.99,
-      "category": "Accessories",
-      "ratings": 4.3,
-      "creationDate": "2024-07-06T16:45:00Z"
-    },
-    {
-      "name": "Electric Kettle",
-      "image": "https://example.com/images/kettle.jpg",
-      "description": "Fast-boiling electric kettle with auto shut-off and stainless steel body.",
-      "price": 29.99,
-      "category": "Home Appliances",
-      "ratings": 4.2,
-      "creationDate": "2024-07-07T11:20:00Z"
-    },
-    {
-      "name": "Smartphone",
-      "image": "https://example.com/images/smartphone.jpg",
-      "description": "Latest Android smartphone with AMOLED display and 128GB storage.",
-      "price": 699.99,
-      "category": "Mobile Phones",
-      "ratings": 4.6,
-      "creationDate": "2024-07-08T18:30:00Z"
-    },
-    {
-      "name": "Running Shoes",
-      "image": "https://example.com/images/shoes.jpg",
-      "description": "Lightweight running shoes with breathable mesh and cushioned sole.",
-      "price": 89.99,
-      "category": "Sportswear",
-      "ratings": 4.4,
-      "creationDate": "2024-07-09T13:10:00Z"
-    },
-    {
-      "name": "Digital Camera",
-      "image": "https://example.com/images/camera.jpg",
-      "description": "Compact digital camera with 20MP sensor and 4K video recording.",
-      "price": 399.99,
-      "category": "Cameras",
-      "ratings": 4.5,
-      "creationDate": "2024-07-10T15:50:00Z"
-    },
-    {
-      "name": "Espresso Machine",
-      "image": "https://example.com/images/espresso.jpg",
-      "description": "Automatic espresso machine with milk frother and programmable settings.",
-      "price": 199.99,
-      "category": "Kitchen Appliances",
-      "ratings": 4.7,
-      "creationDate": "2024-07-11T08:25:00Z"
-    },
-    {
-      "name": "Fitness Tracker",
-      "image": "https://example.com/images/fitness-tracker.jpg",
-      "description": "Waterproof fitness tracker with heart rate monitor and sleep tracking.",
-      "price": 49.99,
-      "category": "Wearables",
-      "ratings": 4.3,
-      "creationDate": "2024-07-12T10:00:00Z"
-    }
-  ]
-  
+  {
+    "name": "Wireless Bluetooth Headphones",
+    "image": "https://example.com/images/headphones.jpg",
+    "description": "High-quality wireless Bluetooth headphones with noise cancellation.",
+    "price": 59.99,
+    "category": "Electronics",
+    "brand": "SoundPro",
+    "ratings": 4.5,
+    "creationDate": "2024-07-01T10:30:00Z"
+  },
+  {
+    "name": "Smart LED TV 55\"",
+    "image": "https://example.com/images/tv.jpg",
+    "description": "55-inch 4K Ultra HD Smart LED TV with HDR and Alexa compatibility.",
+    "price": 499.99,
+    "category": "Electronics",
+    "brand": "VisionTech",
+    "ratings": 4.7,
+    "creationDate": "2024-07-03T14:15:00Z"
+  },
+  {
+    "name": "Gaming Laptop",
+    "image": "https://example.com/images/laptop.jpg",
+    "description": "High-performance gaming laptop with Intel i7 processor and NVIDIA RTX 3070.",
+    "price": 1299.99,
+    "category": "Computers",
+    "brand": "GameMax",
+    "ratings": 4.8,
+    "creationDate": "2024-07-05T09:00:00Z"
+  },
+  {
+    "name": "Wireless Mouse",
+    "image": "https://example.com/images/mouse.jpg",
+    "description": "Ergonomic wireless mouse with adjustable DPI and long battery life.",
+    "price": 24.99,
+    "category": "Accessories",
+    "brand": "ClickPro",
+    "ratings": 4.3,
+    "creationDate": "2024-07-06T16:45:00Z"
+  },
+  {
+    "name": "Electric Kettle",
+    "image": "https://example.com/images/kettle.jpg",
+    "description": "Fast-boiling electric kettle with auto shut-off and stainless steel body.",
+    "price": 29.99,
+    "category": "Home Appliances",
+    "brand": "KitchenMaster",
+    "ratings": 4.2,
+    "creationDate": "2024-07-07T11:20:00Z"
+  },
+  {
+    "name": "Smartphone",
+    "image": "https://example.com/images/smartphone.jpg",
+    "description": "Latest Android smartphone with AMOLED display and 128GB storage.",
+    "price": 699.99,
+    "category": "Mobile Phones",
+    "brand": "TechWave",
+    "ratings": 4.6,
+    "creationDate": "2024-07-08T18:30:00Z"
+  },
+  {
+    "name": "Running Shoes",
+    "image": "https://example.com/images/shoes.jpg",
+    "description": "Lightweight running shoes with breathable mesh and cushioned sole.",
+    "price": 89.99,
+    "category": "Sportswear",
+    "brand": "SpeedStep",
+    "ratings": 4.4,
+    "creationDate": "2024-07-09T13:10:00Z"
+  },
+  {
+    "name": "Digital Camera",
+    "image": "https://example.com/images/camera.jpg",
+    "description": "Compact digital camera with 20MP sensor and 4K video recording.",
+    "price": 399.99,
+    "category": "Cameras",
+    "brand": "CapturePro",
+    "ratings": 4.5,
+    "creationDate": "2024-07-10T15:50:00Z"
+  },
+  {
+    "name": "Espresso Machine",
+    "image": "https://example.com/images/espresso.jpg",
+    "description": "Automatic espresso machine with milk frother and programmable settings.",
+    "price": 199.99,
+    "category": "Kitchen Appliances",
+    "brand": "BrewMaster",
+    "ratings": 4.7,
+    "creationDate": "2024-07-11T08:25:00Z"
+  },
+  {
+    "name": "Fitness Tracker",
+    "image": "https://example.com/images/fitness-tracker.jpg",
+    "description": "Waterproof fitness tracker with heart rate monitor and sleep tracking.",
+    "price": 49.99,
+    "category": "Wearables",
+    "brand": "FitPlus",
+    "ratings": 4.3,
+    "creationDate": "2024-07-12T10:00:00Z"
+  }
+]

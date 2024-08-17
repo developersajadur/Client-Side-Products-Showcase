@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '../Products/ProductCard';
 import { Pagination } from 'flowbite-react';
+import axios from 'axios';
 
 const api = import.meta.env.VITE_API_URL;
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [brands, setBrands] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
@@ -30,34 +33,62 @@ const Shop = () => {
     };
 
     useEffect(() => {
-        setLoading(true);
-        const query = new URLSearchParams({
-            page: currentPage,
-            search: searchQuery,
-            brand: selectedBrand,
-            category: selectedCategory,
-            minPrice: priceRange.min,
-            maxPrice: priceRange.max,
-            sort: sortOption,
-        }).toString();
+        const fetchProducts = async () => {
+            setLoading(true);
+            try {
+                const query = new URLSearchParams({
+                    page: currentPage,
+                    search: searchQuery,
+                    brand: selectedBrand,
+                    category: selectedCategory,
+                    minPrice: priceRange.min,
+                    maxPrice: priceRange.max,
+                    sort: sortOption,
+                }).toString();
 
-        fetch(`${api}/products?${query}`)
-            .then(res => res.json())
-            .then(data => {
+                const { data } = await axios.get(`${api}/products?${query}`);
                 if (Array.isArray(data.products) && Number.isInteger(data.totalPages)) {
                     setProducts(data.products);
                     setTotalPages(data.totalPages);
                 } else {
                     setError("Invalid data format received from the server.");
                 }
-                setLoading(false);
-            })
-            .catch(error => {
+            } catch (error) {
                 setError("Error fetching products");
-                setLoading(false);
                 console.error("Error fetching products:", error);
-            });
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProducts();
     }, [currentPage, searchQuery, selectedBrand, selectedCategory, priceRange, sortOption]);
+
+    useEffect(() => {
+        const fetchCategories = async () => {
+            try {
+                const { data } = await axios.get(`${api}/categories`);
+                setCategories(data);
+            } catch (error) {
+                console.error("Error fetching categories:", error);
+            }
+        };
+
+        fetchCategories();
+    }, []);
+
+    useEffect(() => {
+        const fetchBrand = async () => {
+            try {
+                const { data } = await axios.get(`${api}/brands`);
+                setBrands(data);
+            } catch (error) {
+                console.error("Error fetching categories:", error);
+            }
+        };
+
+        fetchBrand();
+    }, []);
 
     return (
         <div className="p-4">
@@ -80,9 +111,13 @@ const Shop = () => {
                     className="p-2 border border-gray-300 rounded"
                 >
                     <option value="">All Brands</option>
-                    <option value="BrandA">Brand A</option>
-                    <option value="BrandB">Brand B</option>
-                    {/* Add more brand options here */}
+                    {/* Populate with actual brand options */}
+                   {
+                    brands.map((brand) => (
+                        <option key={brand} value={brand}>
+                            {brand}
+                        </option>
+                    ))}
                 </select>
 
                 <select
@@ -91,9 +126,11 @@ const Shop = () => {
                     className="p-2 border border-gray-300 rounded"
                 >
                     <option value="">All Categories</option>
-                    <option value="CategoryA">Category A</option>
-                    <option value="CategoryB">Category B</option>
-                    {/* Add more category options here */}
+                    {categories.map((category) => (
+                        <option key={category} value={category}>
+                            {category}
+                        </option>
+                    ))}
                 </select>
 
                 <select
