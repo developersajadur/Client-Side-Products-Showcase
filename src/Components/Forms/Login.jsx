@@ -6,18 +6,17 @@ const Login = () => {
     const { signInUser, googleLogin, loading } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         await signInUser(email, password);
-        navigate('/'); // Navigate to the home page after successful login
+        navigate('/'); 
     };
 
     const handleGoogleLogin = async () => {
         await googleLogin();
-        navigate('/'); // Navigate to the home page after successful Google login
-    };
+        navigate('/'); 
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">

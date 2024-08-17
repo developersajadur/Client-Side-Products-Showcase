@@ -1,22 +1,22 @@
 import { useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom'; 
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Register = () => {
     const { createUser, googleLogin, loading } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate(); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         await createUser(email, password);
-        navigate('/'); // Navigate to the home page after successful registration
+        navigate('/'); 
     };
 
     const handleGoogleLogin = async () => {
         await googleLogin();
-        navigate('/'); // Navigate to the home page after successful Google login
+        navigate('/'); 
     };
 
     return (
