@@ -8,7 +8,7 @@ const Header = () => {
   const navigate = useNavigate(); // Initialize useNavigate for redirection
 
   const navLinks = [
-    { path: '/', label: 'Home', active: true, status: '' }, // Home is enabled
+    { path: '/', label: 'Shop', active: true, status: '' }, // Home is enabled
     { path: '/about', label: 'About', active: false, status: 'disable' },
     { path: '/services', label: 'Services', active: false, status: 'disable' },
     { path: '/pricing', label: 'Pricing', active: false, status: 'disable' },
@@ -23,13 +23,13 @@ const Header = () => {
   return (
     <Navbar fluid={true} rounded={true} className='bg-[D1E9F6]'>
       <Navbar.Brand as={Link} to="/">
-        <img
-          src="https://flowbite.com/docs/images/logo.svg"
-          className="mr-3 h-6 sm:h-9"
+        {/* <img
+          src="/public/logo.png"
+          className="mr-3 w-10 md:w-60 md:h-24"
           alt="Logo"
-        />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Flowbite Navbar
+        /> */}
+        <span className="self-center whitespace-nowrap text-xl md:text-3xl lg:text-4xl font-semibold dark:text-white">
+         Products Planet
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
